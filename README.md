@@ -43,7 +43,7 @@ Python 3.6+
 
    - Clone the forked repository to your local machine:
      ```bash
-     git clone https://github.com/Vinay123-ux
+     git clone https://github.com/Vinay123-ux/Desktop-Voice-Assistant.git
      cd Jarvis-Desktop-Voice-Assistant
      ```
 
