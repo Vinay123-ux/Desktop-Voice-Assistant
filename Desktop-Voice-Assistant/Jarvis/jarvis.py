@@ -151,12 +151,14 @@ if __name__ == "__main__":
 
     while True:
         query = takecommand()
-        if not query:
+        if not query:   
             continue
+
+        query = query.lower()
 
         if "time" in query:
             time()
-            
+
         elif "date" in query:
             date()
 
@@ -169,10 +171,10 @@ if __name__ == "__main__":
             play_music(song_name)
 
         elif "open youtube" in query:
-            wb.open("youtube.com")
-            
+            wb.open("https://youtube.com")
+
         elif "open google" in query:
-            wb.open("google.com")
+            wb.open("https://google.com")
 
         elif "change your name" in query:
             set_name()
@@ -186,16 +188,41 @@ if __name__ == "__main__":
             speak(joke)
             print(joke)
 
+        elif "open notepad" in query:
+            speak("Opening Notepad")
+            os.system("start notepad")
+
+        elif "open calculator" in query:
+            speak("Opening Calculator")
+            os.system("start calc")
+
+        elif "open word" in query:
+            speak("Opening Microsoft Word")
+            word_path = r"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\WINWORD.EXE"  # Adjust path as needed
+            os.startfile(word_path)
+
+        elif "open vs code" in query:
+            speak("Opening Visual Studio Code")
+            os.system("code")  # assumes VS Code is added to PATH
+
+        elif "open task manager" in query:
+            speak("Opening Task Manager")
+            os.system("start taskmgr")
+
+        elif "open paint" in query:
+            speak("Opening Paint")
+            os.system("mspaint")
+
         elif "shutdown" in query:
             speak("Shutting down the system, goodbye!")
             os.system("shutdown /s /f /t 1")
             break
-            
+
         elif "restart" in query:
             speak("Restarting the system, please wait!")
             os.system("shutdown /r /f /t 1")
             break
-            
+
         elif "offline" in query or "exit" in query:
             speak("Going offline. Have a good day!")
             break
